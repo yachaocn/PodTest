@@ -14,5 +14,6 @@ jobs:
     strategy:
       matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
     steps:
+      - name: output=======>
       - run: echo ${{fromJSON(needs.job1.outputs.matrix)}}
       - run: build
