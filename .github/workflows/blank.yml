@@ -1,22 +1,20 @@
-name: build
+name: Context testing
 on: push
+
 jobs:
-  job1:
+  dump_contexts_to_log:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - id: set-matrix
-        run: echo "111 ::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
-  job2:
-    needs: job1
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
-    steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
-      - name: Run a one-line script1
-        run: echo ${{fromJSON(needs.job1.outputs.matrix)}}
-      - name: Run a one-line script2
-        run: build
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
