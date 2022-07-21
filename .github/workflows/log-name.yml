@@ -1,0 +1,15 @@
+name: use env
+on: push
+env:
+  name: 'yachao'
+  age: 8
+  
+jobs:
+  jobname:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo avaiale
+        run: echo '${{ name }} ${{ toJSON(age) }}'
+        env:
+          name: 'shenmin'
+      
