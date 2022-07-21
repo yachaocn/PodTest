@@ -14,5 +14,7 @@ jobs:
     strategy:
       matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
     steps:
+      - name: Run a one-line script
+          run: echo Hello, world!
       - run: echo ${{fromJSON(needs.job1.outputs.matrix)}}
       - run: build
