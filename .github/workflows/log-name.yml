@@ -1,4 +1,4 @@
-name: use env
+name: log name and age
 on: push
 env:
   name: 'yachao'
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo avaiale
-        run: echo '${{ name }} ${{ toJSON(age) }}'
+        run: echo '${{ env.name }} ${{ toJSON(env.age) }}'
         env:
           name: 'shenmin'
       
