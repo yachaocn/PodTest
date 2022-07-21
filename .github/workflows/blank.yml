@@ -15,8 +15,8 @@ jobs:
       matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
     steps:
       - name: Run a one-line script
-          run: echo Hello, world!
+        run: echo Hello, world!
       - name: Run a one-line script1
-          run: echo ${{fromJSON(needs.job1.outputs.matrix)}}
+        run: echo ${{fromJSON(needs.job1.outputs.matrix)}}
       - name: Run a one-line script2
-          run: build
+        run: build
