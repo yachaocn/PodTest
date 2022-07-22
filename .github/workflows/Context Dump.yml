@@ -1,5 +1,8 @@
 name: Context Dump
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   dump_contexts_to_log:
