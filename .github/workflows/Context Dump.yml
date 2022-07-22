@@ -23,7 +23,7 @@ jobs:
         run: echo '${{ toJSON(matrix) }}'
       - name: Dump secrets context
         run: echo '${{ toJSON(secrets) }}'
-      - name: status
+      - name: summary-作业摘要
         run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
         
         
