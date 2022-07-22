@@ -26,6 +26,6 @@ jobs:
       - name: summary-作业摘要
         run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
       - name: Dump Home Path
-        run: echo ls -al $HOME
+        run: ls -al $HOME
         
         
