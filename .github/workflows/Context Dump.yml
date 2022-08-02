@@ -32,6 +32,6 @@ jobs:
       - name: Read GITHUB_ENV
         run: echo "${{ env.action_state }}"
       - name: Dump GITHUB_ENV
-        run: echo "${{ toJSON($GITHUB_ENV) }}"
+        run: echo $GITHUB_ENV
         
         
