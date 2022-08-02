@@ -28,7 +28,7 @@ jobs:
       - name: Dump Home Path
         run: ls -al $HOME
       - name: echo GITHUB_ENV
-        run: echo "${{ $GITHUB_ENV }}"
+        run: echo "${{ $env }}"
       - name: Dump GITHUB_ENV
         run: echo "action_state=yellow" >> $GITHUB_ENV
       - name: Read GITHUB_ENV
