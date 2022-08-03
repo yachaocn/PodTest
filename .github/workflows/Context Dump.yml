@@ -32,7 +32,7 @@ jobs:
       - name: Read GITHUB_ENV
         run: echo "${{ env.action_state }}"
       - name: Read1 GITHUB_ENV
-        run: echo $action_state
+        run: echo "dump $action_state"
       - name: Dump GITHUB_ENV
         run: echo $GITHUB_ENV
         
