@@ -31,6 +31,8 @@ jobs:
         run: echo "action_state=yellow" >> $GITHUB_ENV
       - name: Read GITHUB_ENV
         run: echo "${{ env.action_state }}"
+      - name: Read1 GITHUB_ENV
+        run: echo $action_state
       - name: Dump GITHUB_ENV
         run: echo $GITHUB_ENV
         
